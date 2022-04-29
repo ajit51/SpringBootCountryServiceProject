@@ -19,7 +19,13 @@ public class CountryService {
     }
 
     public Country getCountryById(Integer countryId) {
-        return countryRepo.findById(countryId).get();
+        List<Country> countries = countryRepo.findAll();
+        Country country = null;
+        for (Country con : countries){
+            if (con.getId() == countryId)
+                country = con;
+        }
+        return country;
     }
 
     public Country getCountryByName(String countryName) {
@@ -48,5 +54,9 @@ public class CountryService {
         response.setId(countryId);
         response.setMsg("Country Deleted !!");
         return response;
+    }
+
+    public void deleteeCountry(Country country) {
+        countryRepo.delete(country);
     }
 }

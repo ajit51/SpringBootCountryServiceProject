@@ -48,6 +48,7 @@ public class CountryController {
 
     @DeleteMapping("/deleteCountry/{countryId}")
     public ResponseEntity<AddResponse> addCountry(@PathVariable Integer countryId) {
+        countryService.deleteCountry(countryId);
         return new ResponseEntity<>(countryService.deleteCountry(countryId), HttpStatus.OK);
     }
 
