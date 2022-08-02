@@ -16,6 +16,8 @@ class CountryControllerIntegrationTest {
 
     TestRestTemplate restTemplate = new TestRestTemplate();
 
+    //First start the spring Boot server then run the test class
+
     @Test
     @Order(1)
     void getCountriesIntegrationTest() throws JSONException {
