@@ -110,4 +110,11 @@ public class CountryControllerTest {
         Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
         Assertions.assertEquals(country, response.getBody());
     }
+
+    static class CountryControllerIntegrationTest {
+
+        @Test
+        void getCountries() {
+        }
+    }
 }
